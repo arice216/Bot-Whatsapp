@@ -1,12 +1,12 @@
 const axios = require("axios");
 const cheerio = require("cheerio");
 
-const ACCOUNT_SID = "TON_SID";
-const AUTH_TOKEN = "TON_TOKEN";
+const ACCOUNT_SID = "ACdbb691478dea42c41dbfccd40af1eba1";
+const AUTH_TOKEN = "e0648f4bd40871adb8fba20833a25632";
 
 const client = require("twilio")(ACCOUNT_SID, AUTH_TOKEN);
 
-const URL = "https://example.com";
+const URL = "https://www.richbourse.com/common/actualite/index";
 
 let knownLinks = [];
 
@@ -28,7 +28,7 @@ async function checkSite() {
   for (let link of newLinks) {
     await client.messages.create({
       from: "whatsapp:+14155238886", // Twilio sandbox
-      to: "whatsapp:+TON_NUMERO",
+      to: "whatsapp:+22662594394",
       body: "🚀 Nouveau lien:\n" + link
     });
   }
